@@ -1,7 +1,15 @@
+import axios from "axios";
 import MovieCar from "components/MovieCard";
 //import MovieScore from "components/MovieScore";
 //import MovieStars from "components/MovieStars";
 import Pagination from "components/Pagination";
+import { BASE_URL } from "utils/request";
+
+// FORMA ERRADA
+axios.get(`${BASE_URL}/movies?size=12&page=0`)
+    .then(response => {
+        console.log(response.data);
+    });
 
 function Listing() {
     return (
