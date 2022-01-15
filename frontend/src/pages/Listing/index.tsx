@@ -7,8 +7,6 @@ import Pagination from "components/Pagination";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "utils/request";
 
-
-
 function Listing() {
 
     const [pageNumber, setPageNumber] = useState(0);
@@ -35,9 +33,13 @@ function Listing() {
             });
     }, [pageNumber]);
 
+    const handlarPageChange = (newPageNumber: number) => {
+        setPageNumber(newPageNumber);
+    }
+
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={handlarPageChange}/>
 
             <div className="container">
                 <div className="row">
